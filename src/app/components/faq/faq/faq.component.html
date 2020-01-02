@@ -1,0 +1,33 @@
+<app-navbar  [receivedParentMessage]="messageToSendP"></app-navbar>
+<div class="container">
+
+    <h2>questions les plus fréquentes posées</h2>
+  
+    <div class="accordion" >
+      <div class="accordion-item" (click)="toggleClass($event)" *ngFor="let faq of listFaq">
+        <a >{{faq.question}}</a>
+        <div class="content" *ngIf="faq.answer!== null">
+          <p>{{faq.answer}}</p>
+        </div>
+      </div>
+      <div>
+        <form [formGroup]="faqForm" (ngSubmit)="submitForm()" class="form-ctn" >
+          <h3 class="text-info  title-conments">Questions/Comments</h3>
+          <div class="input-group mb-3 question-input-ctn">
+            <textarea type="text" class="form-control" id="questionInput" formControlName="questionInput" placeholder="Une Question? sa se passe ici..." 
+            aria-label="Recipient's username" aria-describedby="button-addon2"
+            [ngClass]="{'is-invalid': submitted && f.questionInput.errors}"></textarea>
+            <div class="input-group-append">
+              <button class="btn btn-info"  id="button-addon2">Send</button>
+            </div>
+            <div *ngIf="submitted && f.questionInput.errors" class="invalid-feedback errors-ctn-msg">
+              <div *ngIf="f.questionInput.errors.required">Veuillez poser votre question avant de soummettre votre demande !</div>
+            </div>
+          </div>
+   
+        </form>
+      </div>
+    </div>
+    <div class="ftr">Design by <a href="http://www.google.com/" target="_blank">ME :-)</a></div>
+  </div>
+  <app-footer></app-footer>

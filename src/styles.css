@@ -1,0 +1,32 @@
+/************************************************ 
+ @author: azedine BATOUCHE
+*************************************************/
+
+
+/************************************************ 
+******************** BASE ***********************
+*************************************************/
+
+body{
+    margin: 0px !important;
+    padding: 0px !important;
+    font-family: "Helvetica Neue",Helvetica,sans-serif ;
+    font-size: 1.2em;
+    line-height: 1.5em;
+}
+.container-fluid, .row{padding: 0px !important; margin: 0px !important;}
+label,h1{ font-weight: 100 ; }
+h3{ font-weight: normal !important; font-size: 26px !important; }
+a:link, a:visited { color: currentColor; }
+a, a:hover{ text-decoration: none;}
+
+
+
+/************************************************ 
+**************** OTHERS AND SHARED **************
+*************************************************/
+
+.glyphicon:before{ margin-right: 5px;}
+.logo-app{ width: 50px; height: 50px; border-radius: 50px; }
+.bloc{ display: block; margin: 0 auto; }
+.divider{ margin: 20px 0px;}

@@ -1,0 +1,68 @@
+/************************************************ 
+ @author: someone
+*************************************************/
+
+.col-md-6{ padding: 0px; }
+
+.wrapper-form{
+    height: auto;
+    display: flex;
+    margin: 40px 35px;
+    border: 1px solid #D2D9E0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.wrapper{ display: table; margin: 0 auto; }
+.wrapper-main{ height: 100vh; display:table-cell; vertical-align: middle; }
+.bloc-title{ font-weight: 400; margin-left: 30px; }
+.bloc-left{ width: auto; }
+form{ padding: 10px 30px 30px 30px; }
+.bloc-logo{ display: block; text-align: center; margin: 25px; }
+.bloc-size{ padding: 120px 80px 20px 80px ; display: block; }
+.bloc-img{
+    display: table-cell;
+    width: 245px;
+    height: 245px; 
+    background-image: url('/assets/img/create-account-img.jpg');
+    background-size: cover;
+    border-radius: 30px;
+}
+.text-img{ font-size: 20px; text-align: center; font-weight: 400; }
+
+.grid { display: block; margin-bottom: 15px; }
+.grid:after { content: ""; display: table; clear: both; }
+  .col-1-2 { width: 48%; }
+  .col-1-3 { width: 33.33%; padding-bottom: 8px; }
+  .col-2-3 { width: 66.66%; }
+  [class*='col-'] { float: left; padding-right: 10px; }
+ .controls{ clear: both; display: block; padding-right: 20px; }
+ .text{ display: block; font-size: 13px; width: auto; line-height: normal; padding: 10px 0px; }
+ .text-info{ color: #D1D4D6; padding-top: 8px;}
+ .text-primary{ color: #1873EE ; text-align: center;}
+ .text-errors{ font-size: 11px; }
+ .text-primary:hover{ background-color: #A4C4EF; cursor: pointer; border-radius: 8px; text-decoration: none; } 
+ .spinner-position{ margin-top: 10px; }
+
+ /************ TABLETTE ****************/
+ @media ( min-width: 760px ) and ( max-width: 992px ){
+    .bloc-left{ min-height: 800px !important; height: auto; padding: 10px 30px 30px 30px; }
+    .bloc-size{ padding: 200px 80px 20px 80px;}
+ }
+
+/************ MOBILE ************/
+ @media (max-width: 911px){
+    .wrapper-main{ width: 100vw !important; }
+    .wrapper-form{ margin: 0px; border: none; }
+    .bloc-left{ padding-left: 0px !important ; padding-right: 0px !important ;}
+    .grid{ position: relative; display: block; }
+    [class*='col-'], .controls {
+        clear: both;
+        display: block;
+        padding: 15px 5px;
+        width: 100%;
+    }
+    .col-2-3 { position: absolute; top: 50px; }
+     .divider{ margin:0px; }
+    .btn-primary{ display: block; margin: 0px auto; }
+ }
+ 

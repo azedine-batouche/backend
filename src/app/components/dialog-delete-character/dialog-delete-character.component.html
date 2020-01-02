@@ -1,0 +1,7 @@
+<div mat-dialog-content>
+  <p>Voulez vous vraiment supprimer ce character</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()" cdkFocusInitial>Non</button>
+  <button mat-button [mat-dialog-close]="data" >Yes</button>
+</div>

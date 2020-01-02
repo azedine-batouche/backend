@@ -1,0 +1,88 @@
+<div class="container-fluid">
+  <div class="wrapper">
+  <div class="wrapper-main">
+    <div class="wrapper-form">
+      <div class="col-md-6 col-sm-12 col-12 bloc-left">
+        <div class="bloc">
+          <div class="bloc-logo">
+          <img src="assets/img/login-title.png" style="width: 150px; height: 60px; border-radius: 30px;">
+        </div>
+        </div>
+        <div class="bloc bloc-title">
+          <p>Créer votre compte</p>
+        </div>
+        <form [formGroup]="formRegister" (ngSubmit)="onSubmit()">
+          <div class="grid"> 
+            <div class="col-1-2">
+              <input type="text" name="firstName" id="firstName" class="form-control" placeholder="Nom" formControlName="firstName"
+              [ngClass]="{'is-invalid': submitted && f.firstName.errors,
+                          'is-valid': submitted && f.firstName.valid }" autofocus="yes">  
+              <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback text-errors"> 
+                <div *ngIf="f.firstName.errors.required" >Champ obligatoire</div>
+                <div *ngIf="f.firstName.errors.minlength" >Min 4 characteres</div>
+            </div>
+            </div>
+            <div class="col-1-2">
+              <input type="text" name="lastName" id="lastName" class="form-control" placeholder="Prénon" formControlName="lastName"
+              [ngClass]="{'is-invalid': submitted && f.lastName.errors ,
+                          'is-valid': submitted && f.lastName.valid }" >
+              <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback text-errors">
+                <div *ngIf="f.lastName.errors.required" >Champ obligatoire</div>
+                <div *ngIf="f.lastName.errors.minlength">Min 4 characters</div>
+              </div>      
+            </div>
+          </div>
+          <div class="controls">
+            <input type="text" name="email" id="email" class="form-control" placeholder="Email" formControlName="email" 
+            [ngClass]="{'is-invalid': submitted && f.email.errors,
+                        'is-valid': submitted && f.email.valid}">
+            <div *ngIf="submitted && f.email.errors" class="invalid-feedback text-errors">
+              <div *ngIf="f.email.errors.required">Champ obligatorie</div>
+              <div *ngIf="f.email.errors.email">Email invalid !</div>
+            </div>
+            <div *ngIf=" !submitted " class="text text-info"><small> pouvez utiliser des lettres, des chiffres et des points</small></div>
+          </div>
+
+          <div class="grid">
+          <div class="col-1-2">
+            <input type="password" name="password" id="password" class="form-control" placeholder="Mot de passe"  formControlName="password" 
+            [ngClass]="{'is-invalid': submitted && f.password.errors,
+                        'is-valid': submitted && f.password.valid }">
+            <div *ngIf="submitted && f.password.errors" class="invalid-feedback text-errors">
+              <div *ngIf="f.password.errors.required">Champ obligatoire</div>
+              <div *ngIf="f.password.errors.minlength">Min 4 characters</div>
+            </div>
+          </div>
+          
+          <div class="col-1-2">
+            <input type="password" name="confirmPassword" id="confirmPassword" class="form-control" placeholder="Confirmer"  formControlName="confirmPassword" 
+            [ngClass]="{'is-invalid': submitted && f.confirmPassword.errors,
+                        'is-valid': submitted && f.confirmPassword.valid}">
+            <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback text-errors">
+              <div *ngIf="f.confirmPassword.hasError('NoPassswordMatch')">Mot de passe différant</div>
+            </div>
+          </div>
+          <div *ngIf=" !submitted " class="text text-info"><small>Utilisez au moins huit caractères avec des lettres, des chiffres et des symboles</small></div> 
+        </div>
+          <div class="grid divider">
+            <div class="col-2-3">
+              <a [routerLink]="['/login']" class="text text-primary">Déja inscrit ! connectez vous</a>
+            </div>
+            <div class="col-1-3">
+            <button  class="btn btn-primary " [disabled]="loading">S'inscrire</button>
+              <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1 spinner-position"></span>  
+            </div>
+          </div>
+          </form>
+        </div>
+        <div class="col-md-6 col-sm-0 col-0">
+          <div class="bloc">
+            <div class="bloc-size">
+            <div class="bloc-img"></div>
+          </div><span class=" bloc text-img">Accèder à la saga</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  

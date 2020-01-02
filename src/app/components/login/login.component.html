@@ -1,0 +1,58 @@
+<div class="container-fluid">
+    <div class="row ">
+        <div class="col-lg-4 col-md-12 col-xs-12">
+            <div class="wrapper">
+                <div class="bloc-left">
+                    <div class="bloc">
+                        <img src="assets/img/login-title.png" class="bloc bloc-img" alt="Dragon ball Z" >     
+                    </div>
+                    <div class="bloc">                
+                        <form class="bloc"  [formGroup]="loginForm" (ngSubmit)="onSubmitted()">
+                            <div class="white-divider text-title"><h3>Connexion</h3></div>
+
+                            <div class="form-group bloc-input">
+                                <label for="inputEmail" class="control-label">Nom d'utilisateur</label>       
+                                <input type="email" id="inputEmail" class="form-control" formControlName="login" 
+                                [ngClass]="{'is-invalid': ((submitted && f.login.errors) || (f.login.pristine && f.login.touched)),
+                                             'is-valid': submitted && f.login.valid}" autofocus="yes">
+                                <div *ngIf="(submitted && f.login.errors) || (f.login.pristine && f.login.touched) " class="invalid-feedback errors-ctn-msg ">
+                                    <div *ngIf="f.login.errors.required || (f.login.pristine && f.login.touched)  " > Champ oligatoire</div>
+                                    <div *ngIf="f.login.errors.email" >Email invalid</div>
+                                </div>
+                            </div>
+                            
+                            
+                            <div class="form-group bloc-input">
+                                <label for="inputPassword" class="control-label">Mot de passe</label>
+                                <input type="password" id="inputPassword"  class="form-control"  formControlName="password" 
+                                [ngClass]="{'is-invalid': (submitted && f.password.errors) ,
+                                'is-valid': submitted && f.password.valid }">
+                                <div *ngIf="(submitted && f.password.errors) " class=" invalid-feedback error-msg">
+                                    <div *ngIf="f.password.errors.required" >Champ obligatoire</div>
+                                    <div *ngIf="f.password.errors.minlength" >Min {{paswwordLength}} caractères</div>     
+                                </div>
+                            </div>
+                            <div class="form-group  divider">
+                                <button class="btn btn-lg btn-block btn-primary login-btn-submit" [disabled]="loading">
+                                    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                                    Connexion</button>
+                                </div>
+                                
+                                <div class="form-group"  style="color: #007bff">
+                                    <a  class="link" [routerLink]="['/subscribe']" routerLinkActive="router-link-active">Créer un compte</a>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="bloc">
+                                <span class=" bloc text-center"><small> @2019–2020 D-Ball Z</small></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-0 col-xs-0" >    
+                    <div class="bloc-right"></div>     
+                </div>
+            </div>
+        </div>
+        
+        

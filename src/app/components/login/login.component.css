@@ -1,0 +1,30 @@
+
+/************************************************ 
+ @author: azedine BATOUCHE
+*************************************************/
+.col-lg-8, .col-lg-4{ padding: 0; }
+form{
+    max-width: 330px;
+    max-height: 600px;
+    padding: 50px 30px;
+    z-index: 1;
+}
+.wrapper{ display: table; margin: 0 auto; }
+.bloc-left{
+    height: 100vh;
+    display: table-cell;
+    vertical-align: middle;
+}
+.bloc-right{
+    height: 100vh;
+    display: block;
+    background-color: #3996DE;
+    background-image: url('/assets/img/login-img.jpg');
+    background-size: cover;
+}
+.bloc-input{ height: 100px !important; }
+.bloc-img{ width: 330px; height: 120px; border-radius: 8px; padding: 20px 30px; }
+.text-center{ text-align: center; }
+.text-title{ font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif; font-weight: 100; }
+.link{ padding: 8px; }
+.link:hover{ background-color: #CDE2E5;  border-radius: 8px;}

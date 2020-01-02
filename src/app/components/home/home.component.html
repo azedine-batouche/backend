@@ -1,0 +1,65 @@
+<div class="container-fluid">
+  <app-navbar ></app-navbar>
+
+  <div class="container">
+    <div class="jumbotron">
+      <h1 class="display-3">Hello, {{messageToSendP}}</h1>
+      <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+      <hr class="my-4">
+      <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+      <p class="lead">
+        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+      </p>
+    </div>
+
+
+    <!-- <div class="container search-container">
+      <div class="inner-addon left-addon ">
+        <i class="glyphicon glyphicon-search"></i>
+        <input type="text" formControlName="searchController" class="search-bar" placeholder=" Search...">
+      </div>
+    </div> -->
+
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <input  placeholder="Assignee" aria-label="Assignee" matInput [formControl]="searchController" [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete" >
+          <mat-option *ngFor="let option of searchItems | async" [value]="option">
+            {{option.characterName}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </form>
+
+    <div class="row margin-add-character">
+      <button class="btn btn-big btn-primary" (click)="createCharacter()">Ajouter un personnage</button>
+    </div>
+  </div>
+  
+  <div class="container">
+    <div class="row itemsBlock">   
+      <div class=" white-space col-md-4 col-sm-6 col-12 "  *ngFor="let car of listCharacter">
+        <div class="container-items">
+          <mat-card class="example-card">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>{{car.characterName}}</mat-card-title>
+              <mat-card-subtitle>{{car.category}}</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="http://localhost:8082/v1/pictures/character/{{car.characterId}}" onerror="this.onerror == null;
+            this.src = 'assets/img/img-not-found.jpg'" 
+            alt="Photo of {{car.characterName}}">
+            <mat-card-content>
+              <p>{{car.power}}</p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-button (click)="openDialog(car.characterId)">DELETE </button>
+              <button mat-button >SHARE</button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>

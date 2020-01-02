@@ -1,0 +1,34 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="formContainer" >
+        <form [formGroup]="createForm" >
+    <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Nom du personnage</mat-label>
+          <input matInput placeholder="..."  formControlName="name">
+          <mat-icon matSuffix>account_box</mat-icon>
+          <mat-hint>Veuillez saisir le nom du personnage</mat-hint>
+          <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+        </mat-form-field>
+      </p>
+      <p>
+            <mat-form-field appearance="outline">
+              <mat-label>Catégorie</mat-label>
+              <input matInput placeholder="..." formControlName="category">
+              <mat-icon matSuffix>assignment</mat-icon>
+              <mat-hint>Veuillez séléctioner votre catégorie</mat-hint>
+            </mat-form-field>
+          </p>
+          <p>
+                <mat-form-field appearance="outline">
+                  <mat-label>Power</mat-label>
+                  <input matInput placeholder="..." formControlName="power">
+                  <mat-icon matSuffix>offline_bolt</mat-icon>
+                  <mat-hint>Veuillez séléctionner la puissance du personnage </mat-hint>
+                </mat-form-field>
+              </p>
+              <a mat-stroked-button >Create</a>
+            </form>
+              
+    </div>
+</div>
